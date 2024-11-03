@@ -1,0 +1,11 @@
+<div>
+    <h2>Search for an Author</h2>
+    <div>
+      <label for="authorid">Author Id:</label>
+      <input type="text" #authorQuery id="authorid">
+      <button (click)="submit(authorQuery.value)">Search</button>
+    </div>
+    <div class="container">
+      <router-outlet></router-outlet>
+    </div>
+  </div>

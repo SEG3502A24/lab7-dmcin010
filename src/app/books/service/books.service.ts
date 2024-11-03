@@ -24,6 +24,10 @@ export class BooksService {
     return this.http.post<Author>(Url + 'books/' + id + '/authors', author);
   }
 
+  public getAuthor(id: string): Observable<Author> {
+    return this.http.get<Author>(Url + 'authors/' + id);
+  }
+
   public getAuthorsNamed(firstName: string, lastName: string): Observable<any> {
     const options = {params: new HttpParams().set('firstName', firstName).set('lastName', lastName)};
     return this.http.get<any>(Url + 'authors', options).pipe(
